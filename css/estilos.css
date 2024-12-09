@@ -1,0 +1,107 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #25252b;
+}
+
+.box{
+   position: relative; 
+   margin: 20px;
+   width: 400px;
+   height: 400px;
+   background: repeating-conic-gradient(from var(--b),#3723aa 0%, #3723aa 5%,
+   transparent 5%, transparent 40%, #3723aa 50%);
+   border-radius: 20px;
+    animation: animate 4s linear infinite;
+}
+
+@property --b{
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
+@keyframes animate{
+    0%{
+       --b: 0deg;
+    }
+    100%{
+        --b: 360deg
+    }
+}
+
+.box::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: repeating-conic-gradient(from var(--b),#df0808 0%, #df0808 5%,
+    transparent 5%, transparent 40%, #df0808 50%);
+    animation: animate 4s linear infinite;
+    animation-delay: -1s;
+    border-radius: 20px;  
+}
+
+.box::after{
+    content: '';
+    position: absolute;
+    inset: 8px;
+    background: #43435a;
+    border-radius: 15px;
+    border: 8px solid #43435a;
+}
+
+/* Segunda Caja */
+.box-si{
+    position: relative; 
+    margin: 20px;
+    width: 400px;
+    height: 400px;
+    background: repeating-conic-gradient(from var(--b),#fff 0%, #fff 5%,
+    transparent 5%, transparent 40%, #fff 50%);
+    border-radius: 20px;
+     animation: animate 4s linear infinite;
+ }
+ 
+ @property --b{
+     syntax: '<angle>';
+     inherits: false;
+     initial-value: 0deg;
+ }
+ 
+ @keyframes animate{
+     0%{
+        --b: 0deg;
+     }
+     100%{
+         --b: 360deg
+     }
+ }
+ 
+ .box-si::before{
+     content: '';
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     background: repeating-conic-gradient(from var(--b),#2fd405 0%, #2fd405 5%,
+     transparent 5%, transparent 40%, #2fd405 50%);
+     animation: animate 4s linear infinite;
+     animation-delay: -1s;
+     border-radius: 20px;  
+ }
+ 
+ .box-si::after{
+     content: '';
+     position: absolute;
+     inset: 8px;
+     background: #5f5fc7;
+     border-radius: 15px;
+     border: 8px solid #5f5fc7;
+ }
